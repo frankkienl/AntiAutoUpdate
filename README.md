@@ -28,3 +28,17 @@ This is because that would violate rule 4.4 of the Developer Distrubtion Agreeme
 http://play.google.com/intl/ALL_us/about/developer-distribution-agreement.html
 
 (...) 4.4 **Prohibited Actions.** You agree that you will not engage in any activity with the Market, including the development or distribution of Products, that interferes with, disrupts, damages, or accesses in an unauthorized manner the devices, servers, networks, or other properties or services of any third party including, but not limited to, Android users, Google or any mobile network operator. You may not use customer information obtained from the Market to sell or distribute Products outside of the Market. (...)
+
+
+
+Code
+====
+
+If Google is reading this, please implement this piece of code in the Play Store:
+
+    String foregroundApp = ((ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE)).getRunningTasks(1).get(0).topActivity.getPackageName();
+    if (appThatWillBeUpdated.equals(foregroundApp)){
+        return; //Do not update at this time.
+    }
+
+https://github.com/frankkienl/AntiAutoUpdate/blob/master/src/nl/frankkie/antiautoupdate/Util.java#L103
