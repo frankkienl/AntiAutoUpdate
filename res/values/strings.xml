@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Anti Auto-Update</string>
+    <string name="service_name">Anti Auto-Update Service</string>
+    <string name="accessibility_service_description">Anti Auto-Update Service Description</string>
+</resources>

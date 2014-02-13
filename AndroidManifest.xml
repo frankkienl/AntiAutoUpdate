@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="nl.frankkie.antiautoupdate"
+          android:versionCode="1"
+          android:versionName="1.0">
+    
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="18" />
+    
+    <!-- for the pre 4.3 service //-->
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" />
+    
+    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
+        
+        <service android:name=".NotificationListener"
+                 android:label="@string/service_name"
+                 android:enabled="true"
+                 android:exported="true"
+                 android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+        
+        <activity android:name="MainActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Acceablitiy Service for pre 4.3 devices //-->
+        <service android:name=".MyAccessibilityService" 
+                 android:enabled="true"
+                 android:exported="true"
+                 android:label="Anti Auto Update Accessibility Service">
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/accessibility_service_config" />
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+        </service>
+        <!-- ENDOF Acceability Service //-->
+    </application>
+</manifest>
