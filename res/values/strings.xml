@@ -3,4 +3,7 @@
     <string name="app_name">Anti Auto-Update</string>
     <string name="service_name">Anti Auto-Update Service</string>
     <string name="accessibility_service_description">Anti Auto-Update Service Description</string>
+    <string name="tv1">This application will block the Google Play Store from updating the Application that is currently in the foreground.\n\nGoogle Play will show always show a notification, right before updating an app.\nThis application will therefor monitor the notifications.</string>
+    <string name="tv2">This application needs additional permission to make this work.\n(Normal applications are nog allowed to look at other applications notifications!!)\n\nTherefor this appliction must be approved as Accessibility-Service.\n\nPress the Button below and Enable the LiveView Notifications Accessability Service.\n\n</string>    
+    <string name="btn_text">Click here !</string>
 </resources>
